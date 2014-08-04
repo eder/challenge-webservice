@@ -32,7 +32,7 @@ The following assumes you have all of the recommended tools listed above install
 #### 3. Edit database connection
 		config/database.py
 		$ DATABASE_CONF_URI
-	 	$ DATABASE_ENG app.config['SQLALCHEMY_DATABASE_URI']'mysql://root:12345@localhost/challengeWebservice_development line 10
+	 	$ DATABASE_ENG
 
 #### 4. Upgrade the database:
 
