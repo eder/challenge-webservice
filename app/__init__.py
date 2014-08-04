@@ -10,7 +10,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # Configurations
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:12345@localhost/challengeWebservice_development'
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_CONF_URI
 
 # Define the database object which is imported
 db = SQLAlchemy(app)

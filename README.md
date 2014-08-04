@@ -30,13 +30,13 @@ The following assumes you have all of the recommended tools listed above install
     $ pip install -r requirements.txt
 
 #### 3. Edit database connection
-		config/migration.py
-		$ engine = sqlalchemy.create_engine('mysql://root:12345@localhost/') # line 6
-	 	$ app.config['SQLALCHEMY_DATABASE_URI']'mysql://root:12345@localhost/challengeWebservice_development line 10
+		config/database.py
+		$ DATABASE_CONF_URI
+	 	$ DATABASE_ENG app.config['SQLALCHEMY_DATABASE_URI']'mysql://root:12345@localhost/challengeWebservice_development line 10
 
 #### 4. Upgrade the database:
 
-    $ cd config/
+    $ cd app/config/
 
 #### 5. Database Migrations
 	$ python migration.py db init
