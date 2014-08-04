@@ -3,11 +3,12 @@ import sqlalchemy
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
-engine = sqlalchemy.create_engine('mysql://root:12345@localhost/') 
+from database  import *
+engine = sqlalchemy.create_engine(DATABASE_ENG) 
 engine.execute("CREATE DATABASE IF NOT EXISTS challengeWebservice_development") 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:12345@localhost/challengeWebservice_development'
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_CONF_URI
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)

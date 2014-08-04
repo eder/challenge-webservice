@@ -2,6 +2,7 @@
 import logging
 logging.basicConfig(filename='logs/development.log',level=logging.DEBUG)
 from flask import Flask, jsonify
+from  config.database  import *
 # Import SQLAlchemy
 from flask.ext.sqlalchemy import SQLAlchemy
 
@@ -9,7 +10,6 @@ from flask.ext.sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # Configurations
-app.config.from_object('config')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:12345@localhost/challengeWebservice_development'
 
 # Define the database object which is imported
