@@ -1,0 +1,5 @@
+ADAPTER = 'mysql'
+HOST ='localhost'
+USERNAME = 'root'
+PASSWORD = '12345'
+DATABASE = 'development'
