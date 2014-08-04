@@ -27,6 +27,7 @@ The following assumes you have all of the recommended tools listed above install
 #### 2. Create and initialize virtualenv for the project:
 	$ sudo pip install virtualenv
     $ virtualenv challenge
+    $ source ./challenge/bin/activate
     $ pip install -r requirements.txt
 
 #### 3. Edit database connection
@@ -42,7 +43,7 @@ The following assumes you have all of the recommended tools listed above install
 	$ python migration.py db init
 	$ python migration.py db migrate
 	$ python migration.py db upgrade
-	
+
 
 #### 6. Run the development server:
 
@@ -51,10 +52,10 @@ The following assumes you have all of the recommended tools listed above install
 #### 7. How to use Webservice
 	Create user:
 	$ curl -X POST -F facebookId=30 http://localhost:5000/person/
-	
+
 	Delete user:
 	$ curl -X DELETE http://localhost:5000/person/30/
-	
+
 	List users with limit:
 	$ curl http://localhost:5000/?limit=xxx
 #### Tests
