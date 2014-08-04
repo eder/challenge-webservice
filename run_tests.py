@@ -35,12 +35,12 @@ class MyTest(TestCase):
 		
 	def test_delete_user_return_204(self):
 		# Should return http_status 204 when user is deleted
-		response = requests.delete("http://127.0.0.1:5000/person/123")
+		response = requests.delete("http://127.0.0.1:5000/person/123/")
 		self.assertEquals(response.status_code, 204)
 	
 	def test_delete_user_return_404(self):
 		# Should return http_status 400 when user not find user
-		response = requests.delete("http://127.0.0.1:5000/person/123")
+		response = requests.delete("http://127.0.0.1:5000/person/123/")
 		self.assertEquals(response.status_code, 404)
 	
 	def test_list_of_user_return_200(self):

@@ -11,7 +11,7 @@ def create():
 	else:
 		return abort(403)
 
-@mod_api.route('/person/<facebookId>',  methods=['DELETE'])
+@mod_api.route('/person/<facebookId>/',  methods=['DELETE'])
 def destory(facebookId):
 	return ManageUser().destroy_user(facebookId)
 

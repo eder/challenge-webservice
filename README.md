@@ -25,8 +25,8 @@ The following assumes you have all of the recommended tools listed above install
     $ cd challenger-webservice
 
 #### 2. Create and initialize virtualenv for the project:
-
-    $ mkvirtualenv challenge
+	$ sudo pip install virtualenv
+    $ virtualenv challenge
     $ pip install -r requirements.txt
 
 #### 3. Edit database connection
@@ -38,18 +38,25 @@ The following assumes you have all of the recommended tools listed above install
 
     $ cd config/
 
-#### Database Migrations
+#### 5. Database Migrations
 	$ python migration.py db init
 	$ python migration.py db migrate
 	$ python migration.py db upgrade
 	
 
-#### 5. Run the development server:
+#### 6. Run the development server:
 
     $ python run.py
 
-#### 6. Open [http://localhost:5000](http://localhost:5000)
-
+#### 7. How to use Webservice
+	Create user:
+	$ curl -X POST -F facebookId=30 http://localhost:5000/person/
+	
+	Delete user:
+	$ curl -X DELETE http://localhost:5000/person/30/
+	
+	List users with limit:
+	$ curl http://localhost:5000/?limit=xxx
 #### Tests
 
 To run the tests use the following command:
