@@ -13,8 +13,7 @@ At the bare minimum you'll need the following for your development environment:
 It is strongly recommended to also install and use the following tools:
 
 1. [virtualenv](https://python-guide.readthedocs.org/en/latest/dev/virtualenvs/#virtualenv)
-2. [virtualenvwrapper](https://python-guide.readthedocs.org/en/latest/dev/virtualenvs/#virtualenvwrapper)
-3. [Vagrant](http://vagrantup.com)
+2. [Vagrant](http://vagrantup.com)
 
 ### Local Setup
 
@@ -22,18 +21,18 @@ The following assumes you have all of the recommended tools listed above install
 
 #### 1. Clone the project:
 
-    $ git clone git@github.com:eder/challenger-webservice.git
+    $ git clone git@github.com:eder/challenge-webservice.git
     $ cd challenger-webservice
 
 #### 2. Create and initialize virtualenv for the project:
 
-    $ mkvirtualenv challenger-webservice
+    $ mkvirtualenv challenge
     $ pip install -r requirements.txt
 
 #### 3. Edit database connection
 		config/migration.py
-		$ 6 engine = sqlalchemy.create_engine('mysql://root:12345@localhost/')
-	 $ 10 app.config['SQLALCHEMY_DATABASE_URI']'mysql://root:12345@localhost/challengeWebservice_development'
+		$ engine = sqlalchemy.create_engine('mysql://root:12345@localhost/') # line 6
+	 	$ app.config['SQLALCHEMY_DATABASE_URI']'mysql://root:12345@localhost/challengeWebservice_development line 10
 
 #### 4. Upgrade the database:
 
@@ -41,8 +40,8 @@ The following assumes you have all of the recommended tools listed above install
 
 #### Database Migrations
 	$ python migration.py db init
-	$ python config/migration.py db migrate
-	$ python config/migration.py db upgrade
+	$ python migration.py db migrate
+	$ python migration.py db upgrade
 	
 
 #### 5. Run the development server:
